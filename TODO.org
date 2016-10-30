@@ -1,0 +1,19 @@
+1. Update readme-file
+2. Improve code
+3. Spell cheack TODO file ;) 
+
+
+
+* Improve Code
+Currently the code checks against each word in the dictionary this is inneficient and an idea to improve this is to make the following changes:
+
+1. All words will be stored in a dictionary of a dictionary where the first one just holds dictionaries and the second one word lenght and a set of all the words:
+   #+BEGIN_EXAMPLE
+   {
+   { 1 : {word1, word2, word3}} # These are of length one and stored in a set
+   { 2 : {word4, word5, word6}} # These are of length two and stored in a set
+   etc..
+   }
+   #+END_EXAMPLE
+
+2. The program should start by checking the dictionary of the same length as the word being checked. This should generate a base-value "the best value so far". Before moving on to check words of lenght +/-1 of word lenght it should calculate if the max value it can get from these is bigger than the current "best value", if it isen't return current value, otherwise contine to check.
