@@ -22,7 +22,7 @@ class WordSet():
         for word2 in self._setOfWords:
             if bestIndex == 1:
                 break
-            new = self._calculateIndex(word, word2)
+                new = self._calculateIndex(word, word2)
             if new > bestIndex:
                 bestWord, bestIndex = word2, new
         return (bestWord, bestIndex)
