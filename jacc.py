@@ -34,6 +34,19 @@ for line in open('ordformer.txt', 'r'):
 
 Jacc = WordSet(listOfWords)
 
+#create dictionary with keys as lengths, values as sets of words of same lengths
+dict_with_length = {}
+
+for word in listOfWords:
+    length = len(word)
+    if length not in dict_with_length:
+        dict_with_length[length] = {word}
+    else:    
+        dict_with_length[length].add(word)
+
+#print(dict_with_length[2])
+
+
 while True:
     try:
         print(Jacc.wordIndex(input("Word to compare: ")))
